@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reza de São Cipriano — Grátis</title>
+  <meta name="description" content="Receba agora a reza mais poderosa para trazer seu amor de volta — completamente grátis.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #0A0A14;
+      --darker:  #06060E;
+      --purple:  #5C2D8E;
+      --purple-l:#7B4BB8;
+      --gold:    #C9A050;
+      --gold-l:  #E8C070;
+      --rose:    #D4789A;
+      --cream:   #F5EFE6;
+      --text:    #E8E0F0;
+      --muted:   #9A8FB0;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* stars bg */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(92,45,142,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(212,120,154,0.1) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap { position: relative; z-index: 1; }
+
+    /* top bar */
+    .topbar {
+      background: var(--purple);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .icon-top {
+      font-size: 52px;
+      margin-bottom: 16px;
+      display: block;
+      filter: drop-shadow(0 0 20px rgba(201,160,80,0.5));
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(201,160,80,0.15);
+      border: 1px solid rgba(201,160,80,0.3);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(28px, 7vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    h1 .gold { color: var(--gold); }
+    h1 .rose { color: var(--rose); }
+
+    .hero-sub {
+      font-size: clamp(15px, 3vw, 18px);
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    /* form card */
+    .form-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,160,80,0.2);
+      border-radius: 16px;
+      padding: 36px 28px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .form-card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .form-card p {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+      border-color: var(--gold);
+    }
+    .form-group input::placeholder { color: #555; }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, #A07030 100%);
+      color: #0A0A14;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 17px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+    .btn-submit:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    .privacy {
+      font-size: 11px;
+      color: #444;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* what you get */
+    .section { padding: 60px 20px; max-width: 580px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    .section h2 em { font-style: normal; color: var(--gold); }
+
+    /* features */
+    .features { display: flex; flex-direction: column; gap: 16px; }
+    .feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .feature-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+    .feature-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .feature p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* testimonials */
+    .testimonials { display: flex; flex-direction: column; gap: 14px; }
+    .testimonial {
+      background: rgba(92,45,142,0.12);
+      border: 1px solid rgba(92,45,142,0.25);
+      border-left: 3px solid var(--purple-l);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .testimonial p { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 10px; font-style: italic; }
+    .testimonial .author { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+    /* bottom cta */
+    .bottom-cta {
+      background: linear-gradient(180deg, transparent 0%, rgba(92,45,142,0.15) 100%);
+      border-top: 1px solid rgba(201,160,80,0.1);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .bottom-cta h2 { font-size: clamp(22px, 5vw, 32px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .bottom-cta p { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11px;
+      color: #333;
+      border-top: 1px solid #111;
+    }
+
+    @media (min-width: 540px) {
+      .form-card { padding: 44px 40px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    🔥 Mais de 3.000 pessoas já receberam esta reza — totalmente grátis
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="icon-top">🕯️</span>
+    <span class="hero-tag">Acesso gratuito e imediato</span>
+
+    <h1>
+      Receba agora a reza<br>
+      <span class="gold">mais poderosa</span> para<br>
+      <span class="rose">trazer seu amor de volta</span>
+    </h1>
+
+    <p class="hero-sub">
+      A Reza de São Cipriano — usada há séculos para reconquistar o amor perdido.
+      Vou te enviar direto no seu email, agora.
+    </p>
+
+    <!-- FORM -->
+    <div class="form-card">
+      <h2>Onde envio sua reza?</h2>
+      <p>Preencha abaixo e receba em segundos</p>
+
+      <!-- Trocar pela integração da sua plataforma de email (ActiveCampaign, Mailchimp, etc) -->
+      <form action="#SEU-FORMULARIO" method="POST">
+        <div class="form-group">
+          <label>Seu primeiro nome</label>
+          <input type="text" name="name" placeholder="Como você se chama?" required>
+        </div>
+        <div class="form-group">
+          <label>Seu melhor email</label>
+          <input type="email" name="email" placeholder="email@exemplo.com" required>
+        </div>
+        <button type="submit" class="btn-submit">
+          ✨ Quero minha reza agora — é grátis
+        </button>
+        <p class="privacy">🔒 Seus dados estão seguros. Sem spam, jamais.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ VAI RECEBER -->
+  <section class="section">
+    <div class="section-label">O que você recebe</div>
+    <h2>A reza que <em>muda tudo</em></h2>
+
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">📜</span>
+        <div>
+          <div class="feature-title">A Reza de São Cipriano completa</div>
+          <p>Considerada uma das mais poderosas para reconquistar o amor. Com as palavras exatas, sem adaptação, do jeito que foi transmitida por séculos.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🕯️</span>
+        <div>
+          <div class="feature-title">Como rezar do jeito certo</div>
+          <p>O horário ideal, a posição, o estado mental. Pequenos detalhes que fazem toda a diferença para a reza funcionar.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">💜</span>
+        <div>
+          <div class="feature-title">Sem julgamento, sem complicação</div>
+          <p>Seja qual for sua situação — término recente, meses separada, traição — essa reza foi feita para quando parece que não há mais saída.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-label">O que dizem</div>
+    <h2>Quem rezou <em>sentiu a diferença</em></h2>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Estava separada há 4 meses e achei que tinha perdido ele pra sempre. Fiz a reza com fé e em 12 dias ele me mandou mensagem. Não sei explicar, só sei que funcionou."</p>
+        <span class="author">— Fernanda R., 34 anos, São Paulo</span>
+      </div>
+      <div class="testimonial">
+        <p>"Não acreditava muito nessas coisas, mas estava desesperada. Fiz a reza três vezes seguidas. Na semana seguinte ele apareceu na minha porta. Fiquei sem palavras."</p>
+        <span class="author">— Carla M., 28 anos, Belo Horizonte</span>
+      </div>
+      <div class="testimonial">
+        <p>"Minha mãe usou essa reza quando meu pai quis sair de casa. Eles estão juntos há 31 anos. Agora foi minha vez de precisar. Obrigada por compartilhar."</p>
+        <span class="author">— Juliana S., 41 anos, Curitiba</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h2>Não perca mais um dia longe dele</h2>
+    <p>A reza chega no seu email em segundos. Totalmente grátis.</p>
+
+    <div class="form-card" style="margin: 0 auto; max-width: 420px;">
+      <form action="#SEU-FORMULARIO" method="POST">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" name="name" placeholder="Seu primeiro nome" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Seu melhor email" required>
+        </div>
+        <button type="submit" class="btn-submit">✨ Enviar minha reza agora</button>
+        <p class="privacy">🔒 100% grátis. Sem spam.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>Este conteúdo tem finalidade espiritual e de fé. Os resultados podem variar de pessoa para pessoa.<br>
+    © 2025 · <a href="#politica" style="color:#444;">Política de Privacidade</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
